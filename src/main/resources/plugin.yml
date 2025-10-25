@@ -1,0 +1,42 @@
+name: CustomCommands
+version: '${project.version}'
+main: ru.evolationstudios.customcommands.CustomCommands
+api-version: '1.19'
+
+commands:
+  home:
+    description: Teleports player to its home (bed respawn location).
+    usage: /home
+
+  back:
+    description: Teleports player to its last death location.
+    usage: /back
+
+  suicide:
+    description: Kills a player.
+    usage: /suicide
+
+
+  tpa:
+    description: Sends teleport request to player.
+    usage: /tpa <playername>
+
+  tpc:
+    description: Canceles teleport request to player.
+    usage: /tpc <playername>
+
+  tpaccept:
+    description: Receives teleport request from player.
+    usage: /tpaccept [playername]
+
+  tpacceptall:
+    description: Receives all teleport requests.
+    usage: /tpacceptall
+
+  tpdecline:
+    description: Declines teleport request from player.
+    usage: /tpdecline [playername]
+
+  tpdeclineall:
+    description: Declines all teleport requests.
+    usage: /tpdeclineall

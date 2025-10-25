@@ -1,0 +1,15 @@
+ru\evolationstudios\customcommands\commands\TeleportRequests\CommandTPDecline.class
+ru\evolationstudios\customcommands\commands\TeleportRequests\CommandTPDeclineAll.class
+ru\evolationstudios\customcommands\commands\TeleportRequests\CommandTPA.class
+ru\evolationstudios\customcommands\TeleportAccepts.class
+ru\evolationstudios\customcommands\TeleportAcceptInfo.class
+ru\evolationstudios\customcommands\commands\TeleportRequests\CommandTPC.class
+ru\evolationstudios\customcommands\Config.class
+ru\evolationstudios\customcommands\Config$TeleportRequests.class
+ru\evolationstudios\customcommands\commands\CommandHome.class
+ru\evolationstudios\customcommands\Config$Message.class
+ru\evolationstudios\customcommands\commands\CommandSuicide.class
+ru\evolationstudios\customcommands\commands\TeleportRequests\CommandTPAcceptAll.class
+ru\evolationstudios\customcommands\CustomCommands.class
+ru\evolationstudios\customcommands\commands\CommandBack.class
+ru\evolationstudios\customcommands\commands\TeleportRequests\CommandTPAccept.class

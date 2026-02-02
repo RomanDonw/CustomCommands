@@ -4,7 +4,7 @@
   <groupId>ru.evolationstudios</groupId>
   <artifactId>CustomCommands</artifactId>
   <name>CustomCommands</name>
-  <version>2.4-test</version>
+  <version>2.5-test</version>
   <build>
     <resources>
       <resource>

@@ -20,7 +20,7 @@ public final class CommandTPC implements CommandExecutor
         if (!(sender instanceof Player)) return true;
         Player src_player = (Player)sender;
 
-        Player dest_player = Bukkit.getServer().getPlayer(args[0]);
+        Player dest_player = Bukkit.getServer().getPlayerExact(args[0]);
         if (dest_player == null)
         {
             sender.sendMessage(Config.Message.PlayerNotFound);

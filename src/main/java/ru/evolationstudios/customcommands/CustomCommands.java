@@ -12,6 +12,7 @@ import javax.json.JsonException;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
+import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.command.CommandExecutor;
@@ -68,11 +69,14 @@ public final class CustomCommands extends JavaPlugin
                             },
                             "messages":
                             {
+                                "player-not-found": "Player not found.",
+                                "success": "Success.",
+                                "failed": "Failed.",
+                                "can`t-parse-argument-value": "Can't parse argument value \\"%VALUE%\\" to type \\"%TYPE%\\".",
                                 "teleported-to-home": "Teleported to bed respawn location.",
                                 "teleported-to-back": "Teleported to last death location.",
                                 "teleport-requests":
                                 {
-                                    "player-not-found": "Player not found.",
                                     "request-are-not-available": "Teleport request are not available.",
                                     "you-have-not-anything-requests-to-you": "You have not anything teleport requests to you.",
                                     "sent-request-to-player": "Sent request to player \\"%PLAYER_NAME%\\".",
@@ -89,7 +93,9 @@ public final class CustomCommands extends JavaPlugin
                                     "declined-last-request": "Declined last teleport request.",
                                     "declined-all-requests": "Declined all teleport requests to you.",
                                     "accepted-all-requests": "Accepted all teleport requests to you."
-                                }
+                                },
+                                "playerdata-loaded": "Loaded player data.",
+                                "playerdata-saved": "Saved player data."
                             }
                         }
                         """);
@@ -116,6 +122,11 @@ public final class CustomCommands extends JavaPlugin
         RegisterCommand("tpacceptall", new CommandTPAcceptAll());
         RegisterCommand("tpdecline", new CommandTPDecline());
         RegisterCommand("tpdeclineall", new CommandTPDeclineAll());
+
+        RegisterCommand("playerdata.load", new CommandPlayerDataLoad());
+        RegisterCommand("playerdata.save", new CommandPlayerDataSave());
+
+        RegisterCommand("explode", new CommandExplode());
     }
 
     @Override
@@ -148,6 +159,10 @@ public final class CustomCommands extends JavaPlugin
 
             JsonObject messages = config.getJsonObject("messages");
 
+            Config.Message.PlayerNotFound = messages.getString("player-not-found");
+            Config.Message.Success = messages.getString("success");
+            Config.Message.Failed = messages.getString("failed");
+            Config.Message.CantParseArgumentValue = messages.getString("can`t-parse-argument-value");
             Config.Message.TeleportedToBack = messages.getString("teleported-to-back");
             Config.Message.TeleportedToHome = messages.getString("teleported-to-home");
 
@@ -169,8 +184,6 @@ public final class CustomCommands extends JavaPlugin
             if (DEBUG) System.out.println("Read 7");
             Config.Message.PlayerCanceledRequestFromYou = tpRequestsMessages.getString("player-canceled-request-from-you");
             if (DEBUG) System.out.println("Read 8");
-            Config.Message.PlayerNotFound = tpRequestsMessages.getString("player-not-found");
-            if (DEBUG) System.out.println("Read 9");
             Config.Message.PlayerSentRequestToYou = tpRequestsMessages.getString("player-sent-request-to-you");
             if (DEBUG) System.out.println("Read 10");
             Config.Message.RequestAreNotAvailable = tpRequestsMessages.getString("request-are-not-available");
@@ -187,6 +200,9 @@ public final class CustomCommands extends JavaPlugin
             if (DEBUG) System.out.println("Read 16");
             Config.Message.YouHaveNotSentRequest = tpRequestsMessages.getString("you-have-not-sent-request");
             if (DEBUG) System.out.println("Read 17");
+
+            Config.Message.LoadedPlayerData = messages.getString("playerdata-loaded");
+            Config.Message.SavedPlayerData = messages.getString("playerdata-saved");
 
             jr.close();
         }

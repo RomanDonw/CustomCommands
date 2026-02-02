@@ -18,7 +18,7 @@ public final class CommandTPAccept implements CommandExecutor
 
         if (args.length >= 1)
         {
-            Player src_player = Bukkit.getServer().getPlayer(args[0]);
+            Player src_player = Bukkit.getServer().getPlayerExact(args[0]);
             if (src_player == null)
             {
                 sender.sendMessage(Config.Message.PlayerNotFound);

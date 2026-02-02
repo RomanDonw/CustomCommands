@@ -9,11 +9,15 @@ public final class Config
 
     public static class Message
     {
+        public static String PlayerNotFound;
+        public static String Success;
+        public static String Failed;
+        public static String CantParseArgumentValue;
+
         public static String TeleportedToHome;
         public static String TeleportedToBack;
 
 
-        public static String PlayerNotFound;
         public static String RequestAreNotAvailable;
         public static String YouHaveNotAnythingRequestsToYou;
 
@@ -35,5 +39,9 @@ public final class Config
 
         public static String DeclinedAllRequests;
         public static String AcceptedAllRequests;
+
+
+        public static String LoadedPlayerData;
+        public static String SavedPlayerData;
     }
 }

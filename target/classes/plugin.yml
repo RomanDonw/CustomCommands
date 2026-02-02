@@ -1,5 +1,5 @@
 name: CustomCommands
-version: '2.4-test'
+version: '2.5-test'
 main: ru.evolationstudios.customcommands.CustomCommands
 api-version: '1.19'
 
@@ -40,3 +40,16 @@ commands:
   tpdeclineall:
     description: Declines all teleport requests.
     usage: /tpdeclineall
+
+
+  playerdata.load:
+    description: Loads stored player data.
+    usage: /playerdata.load <playername>
+
+  playerdata.save:
+    description: Saves data of current player.
+    usage: /playerdata.save <playername>
+
+  explode:
+    description: Creates explosion with specified properties.
+    usage: /explode <x:double> <y:double> <z:double> <power:float> [burnblocks:boolean=false]
